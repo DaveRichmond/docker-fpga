@@ -2,10 +2,11 @@
 
 # maybe there's a better way to ensure the list of environment files is
 # sorted, but for now this works
-for env in $(ls /docker | grep '.env$' | sort)
+env_root="/docker"
+for env in $(ls ${env_root} | grep '.env$' | sort)
 do
 	echo Including ${env}
-	. ${env}
+	. ${env_root}/${env}
 
 done
 
