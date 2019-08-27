@@ -9,5 +9,5 @@ RUN apt update && \
 RUN useradd -m code && \
 	mkdir /code && \
 	chown -R code:code /code
-ENTRYPOINT /entrypoint.sh
+ENTRYPOINT ["/bin/bash", "-i", "/entrypoint.sh"]
 
